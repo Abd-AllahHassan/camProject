@@ -5,6 +5,68 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
       <link rel="stylesheet" href="stylee.css">
+      <style>
+         .userprofile{
+            padding-bottom: 20px;
+            width: 600px;
+            height: 100vh;
+            margin-top: 150px;
+            margin-left: 90px;
+         }
+         form{
+            
+            /* margin: 20px; */
+           
+            padding-left:30px ;
+         }
+         .profileform{
+            width: 500px;
+            display: inline-block;
+            padding-top:20px ;
+            padding-bottom: 20px;
+           
+         }
+         .profileform>input{
+            width: 90%;
+            height: 30px;
+            border-radius: 12px;
+            border: 2px solid #3d1856;
+            padding: 4px;
+         }
+         label{
+            padding-right: 10px;
+         }
+         select{
+            width: 200px;
+            height: 23px;
+            color: rgb(4, 4, 19);
+            border-radius: 10px;
+            border: 1px solid rgb(4, 4, 19);
+         }
+         button{
+            width: 120px;
+            height: 23px;
+            background-color: #040216;
+            border-radius: 10px;
+            border: 1px solid #9e9595;
+            margin-left: 36px;
+            color: #ffffff;
+         }
+         button:hover{
+            transition: 0.6s;
+            transform: scale(1.2);
+            background-color: #120d40;
+            color: #9e9595;
+            cursor: pointer;
+         }
+         .emaillabel{
+            margin-left: -10px;
+         }
+         .selector{
+            margin-left: 20px;
+         }
+
+      </style>
       <title>CamLive</title>
    </head>
    <body>
@@ -73,6 +135,27 @@
            </div>
         </nav>
      </header>
+     <div class="userprofile">
+      <form action="#" >
+         <div class="profileform"><label for="">User</label><input type="text"></div>
+         <div class="profileform"><label for="">First</label><input type="text"></div>
+         <div class="profileform"><label for="">Last</label><input type="text"></div>
+         <div class="profileform"><label for="" class="emaillabel">Email</label><input type="text"></div>
+         
+         <div class="profileform"><label for="">Type</label><select class="selector">
+         <option value="">full admin</option>
+         <option value="">finance admin</option>
+         <option value="">teach admin</option></select>
+         </div>
+         <div class="profileform"><label for="" >Enable</label><select class="selector2" id="">
+            <option value="">Enable</option>
+            <option value="">Disable</option>
+         </select>
+         </div>
+         <br/>
+         <div class="profileform"><button>update</button></div>
+      </form>
+     </div>
 
       <script src="main.js"></script>
    </body>

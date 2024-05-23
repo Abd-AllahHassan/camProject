@@ -43,6 +43,34 @@ a {
   margin: 15px 0;
 }
 
+#logBtn{
+  border-radius: 20px;
+  border: 1px solid #000000;
+  background-color: #140535;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+#logBtn:hover{
+  transform: scale(0.95);
+  background-color: #301865;
+}
+/* 
+#logBtn:focus{
+  outline: none;
+}
+
+#logBtn.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+} */
+
 button {
   border-radius: 20px;
   border: 1px solid #000000;

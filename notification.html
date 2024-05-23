@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+   <link rel="stylesheet" href="stylee.css">
+   <title>CamLive</title>
+   <style>
+      .notification {
+         display: none;
+         position: fixed;
+         top: 268px;
+         left: 50%;
+         transform: translateX(-50%);
+         background-color: #130d32;
+         color: white;
+         padding: 10px 20px;
+         border-radius: 5px;
+         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+         margin-top: -100px;
+         transition: 0.4s;
+      }
+      form {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         margin: 240px;
+      }
+      .form-group {
+         margin-bottom: 15px;
+      }
+      label {
+         margin-bottom: 5px;
+      }
+      select, input[type="checkbox"] {
+         margin-bottom: 5px;
+         cursor: pointer;
+      }
+      button {
+         width: 120px;
+         height: 30px;
+         background-color: #040216;
+         border-radius: 10px;
+         border: 1px solid #9e9595;
+         color: #ffffff;
+         cursor: pointer;
+      }
+      button:hover {
+         transition: 0.6s;
+         transform: scale(1.2);
+         background-color: #120d40;
+         color: #9e9595;
+      }
+   </style>
+</head>
+<body>
+   <header class="header">
+      <nav class="nav container">
+         <div class="nav__data">
+            <a href="index.html" class="nav__logo">
+               <i class="ri-planet-line"></i> CamLive
+            </a>
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line nav__burger"></i>
+               <i class="ri-close-line nav__close"></i>
+            </div>
+         </div>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="home.html" class="nav__link">Home</a></li>
+               <li><a href="Cameras.html" class="nav__link">Cameras</a></li>
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Account <i class="ri-lock-line"></i>
+                  </div>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="status.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Status
+                        </a>
+                     </li>
+                     <li>
+                        <a href="biling.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> Biling information
+                        </a>
+                     </li>
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                        </div>
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="notification.html" class="dropdown__sublink">
+                                 <i class="ri-file-list-line"></i> Notifications
+                              </a>
+                           </li>
+                           <li>
+                              <a href="payment.html" class="dropdown__sublink">
+                                 <i class="ri-cash-line"></i> Payments
+                              </a>
+                           </li>
+                           <li>
+                              <a href="delete_account.html" class="dropdown__sublink">
+                                 Delete account <i class="fa-solid fa-trash"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li class="dropdown__item">
+                  <a href="profile.html" class="nav__link">
+                     Profile <i class="ri-user-line"></i>
+                  </a>
+               </li>
+               <li><a href="contact.html" class="nav__link">Contact</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+   
+   <form>
+      <div class="form-group">
+         <input type="checkbox" id="camera-not-available">
+         <label for="camera-not-available">Camera not available</label>
+      </div>
+      <div class="form-group">
+         <label for="after-hours">After hours</label>
+         <select id="after-hours">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="12">12</option>
+            <option value="24">24</option>
+         </select>
+      </div>
+      <button type="button" onclick="updateAccount()">Update</button>
+   </form>
+   
+   <div class="notification" id="notification">Account successfully updated.</div>
+
+   <script>
+      function updateAccount() {
+         const notification = document.getElementById('notification');
+         notification.style.display = 'block';
+         setTimeout(() => {
+            notification.style.opacity = '1';
+         }, 10);
+         setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => {
+               notification.style.display = 'none';
+            }, 400);
+         }, 3000);
+      }
+   </script>
+</body>
+</html>

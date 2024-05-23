@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+   <link rel="stylesheet" href="stylee.css">
+   <style>
+      .userbilling {
+         padding-bottom: 20px;
+         width: 90%;
+         height: 100vh;
+         margin-top: 150px;
+         margin-left: 90px;
+      }
+      form {
+         padding-left: 30px;
+      }
+      .billing-form {
+         width: 700px;
+         display: flex;
+         align-items: center;
+         margin-bottom: 10px;
+      }
+      .billing-form > label {
+         width: 150px; /* Adjust as needed */
+         margin-right: 30px;
+         text-align: right;
+      }
+      .billing-form > input,
+      .billing-form > select {
+         width: calc(100% - 180px); /* Adjust the subtraction value based on label width and margin */
+         height: 30px;
+         border-radius: 12px;
+         border: 2px solid #3d1856;
+         padding: 4px;
+      }
+      select {
+         width: calc(100% - 180px); /* Adjust the subtraction value based on label width and margin */
+         height: 30px;
+         border-radius: 10px;
+         border: 1px solid #040416;
+         color: #040416;
+      }
+      button {
+         width: 120px;
+         height: 30px;
+         background-color: #040216;
+         border-radius: 10px;
+         border: 1px solid #9e9595;
+         color: #ffffff;
+         margin-left: 180px; /* Align with input fields */
+      }
+      button:hover {
+         transition: 0.6s;
+         transform: scale(1.2);
+         background-color: #120d40;
+         color: #9e9595;
+         cursor: pointer;
+      }
+      .selector {
+         margin-top: 14px;
+      }
+      .check {
+         display: flex;
+         align-items: center;
+         margin-left: 180px; /* Align with input fields */
+         margin-bottom: 20px; /* Add some space below the checkbox */
+      }
+      .check input {
+         margin-right: 10px;
+      }
+     
+   </style>
+   <title>CamLive</title>
+</head>
+<body>
+   <header class="header">
+      <nav class="nav container">
+         <div class="nav__data">
+            <a href="index.html" class="nav__logo">
+               <i class="ri-planet-line"></i> CamLive
+            </a>
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line nav__burger"></i>
+               <i class="ri-close-line nav__close"></i>
+            </div>
+         </div>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="home.html" class="nav__link">Home</a></li>
+               <li><a href="Cameras.html" class="nav__link">Cameras</a></li>
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Account <i class="ri-lock-line"></i>
+                  </div>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="status.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Status
+                        </a>
+                     </li>
+                     <li>
+                        <a href="biling.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> Biling information
+                        </a>
+                     </li>
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                        </div>
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="notification.html" class="dropdown__sublink">
+                                 <i class="ri-file-list-line"></i> Notifications
+                              </a>
+                           </li>
+                           <li>
+                              <a href="payment.html" class="dropdown__sublink">
+                                 <i class="ri-cash-line"></i> Payments
+                              </a>
+                           </li>
+                           <li>
+                              <a href="delete_account.html" class="dropdown__sublink">
+                                 Delete account <i class="fa-solid fa-trash"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li class="dropdown__item">
+                  <a href="profile.html" class="nav__link">
+                     Profile <i class="ri-user-line"></i>
+                  </a>
+               </li>
+               <li><a href="contact.html" class="nav__link">Contact</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+   <div class="userbilling">
+      <form action="#">
+         <div class="billing-form">
+            <label for="">Type</label>
+            <select class="selector">
+               <option value="">Select one</option>
+               <option value="">Company</option>
+               <option value="">Personal</option>
+            </select>
+         </div>
+         <div class="billing-form">
+            <label for="">Company/Personal name</label>
+            <input class="companyinput" type="text" >
+         </div>
+         <div class="billing-form">
+            <label for="">Address</label>
+            <input type="text">
+         </div>
+         <div class="billing-form">
+            <label for="">Postal</label>
+            <input type="number">
+         </div>
+         <div class="billing-form">
+            <label for="">Country</label>
+            <select class="selector2" id="">
+               <option value="US">United States</option>
+               <option value="CA">Canada</option>
+               <option value="GB">United Kingdom</option>
+               <option value="AU">Australia</option>
+               <option value="DE">Germany</option>
+               <option value="FR">France</option>
+               <option value="IN">India</option>
+               <option value="CN">China</option>
+               <option value="JP">Japan</option>
+               <option value="BR">Brazil</option>
+            </select>
+         </div>
+         <div class="billing-form">
+            <label for="">VAT number</label>
+            <input type="number">
+         </div>
+         <div class="check">
+            <input type="checkbox" id="no-vat">
+            <label for="no-vat">I do not have a VAT number</label>
+         </div>
+         <br />
+         <div class="billing-form">
+            <button>Update</button>
+         </div>
+      </form>
+   </div>
+   <script src="main.js"></script>
+</body>
+</html>
