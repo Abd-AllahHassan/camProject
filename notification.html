@@ -25,7 +25,7 @@
          display: flex;
          flex-direction: column;
          align-items: flex-start;
-         margin: 240px;
+         margin: 80px;
       }
       .form-group {
          margin-bottom: 15px;
@@ -51,6 +51,18 @@
          transform: scale(1.2);
          background-color: #120d40;
          color: #9e9595;
+      }
+      #cam{
+         width: 80px;
+         border-radius: 8px;
+         color: #040216;
+         border-color: #040216;
+      }
+      #after-hours{
+         width: 80px;
+         border-radius: 8px;
+         color: #040216;
+         border-color: #040216;
       }
    </style>
 </head>
@@ -120,10 +132,14 @@
       </nav>
    </header>
    
+   <h1>Notification</h1>
+
    <form>
       <div class="form-group">
-         <input type="checkbox" id="camera-not-available">
-         <label for="camera-not-available">Camera not available</label>
+        
+         <label for="cameraname">Camera </label>
+         <select id="cam"></select>
+         
       </div>
       <div class="form-group">
          <label for="after-hours">After hours</label>
@@ -139,7 +155,11 @@
       <button type="button" onclick="updateAccount()">Update</button>
    </form>
    
-   <div class="notification" id="notification">Account successfully updated.</div>
+   <div class="notification" id="notification">Account successfully submit.</div>
+
+   <div class="outbut">
+
+   </div>
 
    <script>
       function updateAccount() {
@@ -153,7 +173,7 @@
             setTimeout(() => {
                notification.style.display = 'none';
             }, 400);
-         }, 3000);
+         }, 13000);
       }
    </script>
 </body>

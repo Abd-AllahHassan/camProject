@@ -20,20 +20,7 @@ const showMenu = (toggleId, navId) =>{
 //live cam online
 function addVideo() {
     const url = document.getElementById('url').value;
-    let embedUrl = url;
-
-    if (url.includes('youtube.com/watch?v=')) {
-        const videoId = url.split('v=')[1].split('&')[0];
-        embedUrl = `https://www.youtube.com/embed/${videoId}`;
-    } else if (url.includes('youtu.be/')) {
-        const videoId = url.split('youtu.be/')[1];
-        embedUrl = `https://www.youtube.com/embed/${videoId}`;
-    }
-
-    if (embedUrl) {
+   
         const iframeContainer = document.getElementById('iframeContainer');
-        iframeContainer.innerHTML = `<iframe src="${embedUrl}" allowfullscreen></iframe>`;
-    } else {
-        alert('Please enter a valid URL.');
-    }
+   
 }
