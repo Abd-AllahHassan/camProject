@@ -58,8 +58,15 @@
             cursor: pointer;
         }
         .iframe-container {
-            margin-top: 20px;
+            margin: auto;
+            width: 80%;
+            
         }
+        .iframe-container iframe {
+         width: 100%;
+         height: 500px;
+         border: none;
+      }
         #camselector{
          width: 80px;
          border-radius: 8px;
@@ -142,7 +149,7 @@
         <form action="#" >
         
             <div class="hint">
-                <h1>New Camera</h1>
+                <h2>New Camera</h2>
                 Here you can try your RTSP/RTSPS/RTMP/RTMPS/HTTP video stream before adding it to your account. Example of usage:
                 <br>rtsp://user:pass@mydomain.com:554/h264
                 <br>rtmp://user:pass@mydomain.com:1935/ch0
@@ -150,9 +157,12 @@
             </div>
 
          
-           <div class="camdata"><label for="">Html Code</label><input type="text" id="url"></div>
+           <div class="camdata"><label for="">Html Code</label><input type="text" id="HtmlCode"></div>
+           <div class="camdata"> <button type="button" id="addHtmlButton">Add HTML</button></div>
+           <br><label for="">Or</label>
+           <div class="camdata"><label for="">Url</label><input type="text" id="url"></div>
            
-           <div class="camdata"><button onclick="addVideo()">Add</button></div>
+           <div class="camdata"><button type="button" id="addVideoButton">Add Video</button></div>
         </form>
         <div class="camsllider">
          <select name="camera" id="camselector"></select>
