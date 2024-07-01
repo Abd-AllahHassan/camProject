@@ -18,8 +18,7 @@ const showMenu = (toggleId, navId) =>{
     window.location.href = 'new-camera.html'; // Replace 'new-camera.html' with the path to your HTML file
 }
 //live cam online
-function addVideo() {
-    const url = document.getElementById('url').value;
+function youtubevalidation(url) {
     let embedUrl = url;
 
     if (url.includes('youtube.com/watch?v=')) {
@@ -38,6 +37,51 @@ function addVideo() {
     }
 }
 
+// Function to handle adding video by URL
+function addVideo() {
+    const url = document.getElementById('url').value;
+
+    // Check if the URL is part of the dataarray
+    let isSpecialUrl = false;
+    for (let i = 0; i < dataarray.length; i++) {
+        if (dataarray[i][0].link === url) {
+            populateSelector(i);
+            isSpecialUrl = true;
+            break;
+        }
+    }
+
+    if (!isSpecialUrl) {
+        youtubevalidation(url);
+    }
+}
+
+// Populate selector with camera options
+function populateSelector(index) {
+    const selector = document.getElementById('camselector');
+    selector.innerHTML = ''; // Clear existing options
+
+    dataarray[index].forEach((cam, idx) => {
+        const option = document.createElement('option');
+        option.value = cam.link;
+        option.textContent = cam.name;
+        selector.appendChild(option);
+    });
+
+    // Add event listener for selector
+    selector.addEventListener('change', function() {
+        const selectedUrl = this.value;
+        youtubevalidation(selectedUrl);
+    });
+
+    // Automatically display the first camera
+    if (selector.options.length > 0) {
+        selector.selectedIndex = 0;
+        const event = new Event('change');
+        selector.dispatchEvent(event);
+    }
+}
+
 // Function to add HTML code directly
 function addVideoByHtml() {
     const htmlCode = document.getElementById('HtmlCode').value;
@@ -48,3 +92,26 @@ function addVideoByHtml() {
 // Event listeners for buttons
 document.getElementById('addVideoButton').addEventListener('click', addVideo);
 document.getElementById('addHtmlButton').addEventListener('click', addVideoByHtml);
+
+// Sample data
+let op1 = {
+    name: 'cam1',
+    link: 'https://www.youtube.com/watch?v=vgFF35b567w'
+}
+let op2 = {
+    name: 'cam2',
+    link: 'https://youtu.be/ezLz5P1mqlY?si=gPCcy9FgGhOULs5y'
+}
+let op3 = {
+    name: 'cam3',
+    link: 'https://youtu.be/BO7mALtbs_k?si=UxG1P6ul88liVP-F'
+}
+let op4 = {
+    name: 'cam4',
+    link: 'https://youtu.be/8d633Z-Ez-0?si=Yin5miTxnFBueVh8'
+}
+
+const dataarray = [
+    [op1, op2, op3, op4],
+    [op4, op3, op2, op1]
+];
