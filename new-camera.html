@@ -1,179 +1,203 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
-      <link rel="stylesheet" href="stylee.css">
-      <style>
-        .userdata {
-            padding-bottom: 20px;
-            width: 600px;
-            height: 100vh;
-            margin-top: 150px;
-            margin-left: 90px;
-        }
-        form {
-            padding-left: 30px;
-        }
-        .hint {
-            font-size: 17px;
-            color: #14062e;
-            margin-bottom: 20px;
-            line-height: 1.9;
-        }
-        .camdata {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-        .camdata label {
-            flex: 0 0 100px; /* Adjust the width as needed */
-            padding-right: 10px;
-        }
-        .camdata input {
-            flex: 1;
-            width: 90%;
-            height: 30px;
-            border-radius: 12px;
-            border: 2px solid #3d1856;
-            padding: 4px;
-        }
-        button {
-            width: 120px;
-            height: 30px;
-            background-color: #040216;
-            border-radius: 10px;
-            border: 1px solid #9e9595;
-            margin-left: 230px;
-            color: #ffffff;
-        }
-        button:hover {
-            transition: 0.6s;
-            transform: scale(1.2);
-            background-color: #120d40;
-            color: #9e9595;
-            cursor: pointer;
-        }
-        .iframe-container {
-            margin: auto;
-            width: 80%;
-            
-        }
-        .iframe-container iframe {
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+   <link rel="stylesheet" href="stylee.css">
+   <style>
+      .userdata {
+         padding-bottom: 20px;
+         width: 600px;
+         height: 100vh;
+         margin-top: 150px;
+         margin-left: 90px;
+      }
+
+      form {
+         padding-left: 30px;
+      }
+
+      .hint {
+         font-size: 17px;
+         color: #14062e;
+         margin-bottom: 20px;
+         line-height: 1.9;
+      }
+
+      .hint p a:hover {
+         opacity: 0.7;
+         text-decoration: underline;
+      }
+
+      .camdata {
          width: 100%;
+         display: flex;
+         align-items: center;
+         padding-top: 20px;
+         padding-bottom: 20px;
+      }
+
+      .camdata label {
+         flex: 0 0 100px;
+         /* Adjust the width as needed */
+         padding-right: 10px;
+      }
+
+      .camdata input {
+         flex: 1;
+         width: 90%;
+         height: 30px;
+         border-radius: 12px;
+         border: 2px solid #3d1856;
+         padding: 4px;
+      }
+
+      button {
+         width: 120px;
+         height: 30px;
+         background-color: #040216;
+         border-radius: 10px;
+         border: 1px solid #9e9595;
+         margin-left: 230px;
+         color: #ffffff;
+      }
+
+      button:hover {
+         transition: 0.6s;
+         transform: scale(1.2);
+         background-color: #120d40;
+         color: #9e9595;
+         cursor: pointer;
+      }
+
+      .iframe-container {
+         margin: auto;
+         width: 80%;
+
+      }
+
+      .iframe-container iframe {
+         width: 85%;
          height: 500px;
          border: none;
       }
-        #camselector{
+
+      #camselector {
          width: 80px;
          border-radius: 8px;
          color: #040216;
          border-color: #040216;
          margin-top: -90px;
-        }
-       
-    </style>
-      <title>CamLive</title>
-   </head>
-   <body>
-      <header class="header">
-         <nav class="nav container">
-            <div class="nav__data">
-               <a href="index.html" class="nav__logo">
-                  <i class="ri-planet-line"></i> CamLive
-               </a>               
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-line nav__burger"></i>
-                  <i class="ri-close-line nav__close"></i>
-               </div>
-            </div>
-            <div class="nav__menu" id="nav-menu">
-               <ul class="nav__list">
-                  <li><a href="home.html" class="nav__link">Home</a></li>
-                  <li><a href="Cameras.html" class="nav__link">Cameras</a></li>
-                  <li class="dropdown__item">
-                     <div class="nav__link">                     
-                            Account   <i class="ri-lock-line"></i>                                                    
-                     </div>
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="status.html" class="dropdown__link">
-                              <i class="ri-pie-chart-line"></i> Status
-                           </a>                          
-                        </li>
-                        <li>
-                           <a href="biling.html" class="dropdown__link">
-                              <i class="ri-arrow-up-down-line"></i> Biling information
-                           </a>
-                        </li>
-                        <li class="dropdown__subitem">
-                           <div class="dropdown__link">
-                              <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
-                           </div>
-                           <ul class="dropdown__submenu">
-                              <li>
-                                 <a href="notification.html" class="dropdown__sublink">
-                                    <i class="ri-file-list-line"></i> Notifications
-                                 </a>
-                              </li>
-                              <li>
-                                 <a href="payment.html" class="dropdown__sublink">
-                                    <i class="ri-cash-line"></i> Payments
-                                 </a>
-                              </li>
-                              <li>
-                                 <a href="delete_account.html" class="dropdown__sublink">
-                                    Delete account<i class="fa-solid fa-trash"></i>
-                                 </a>
-                              </li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="dropdown__item">
-                     <a href="profile.html" class="nav__link">
-                        Profile <i class="ri-user-line"></i>
-                     </a>
-                  </li>
+      }
+   </style>
+   <title>CamLive</title>
+</head>
 
-                  <li><a href="contact.html" class="nav__link">Contact</a></li>
-               </ul>
+<body>
+   <header class="header">
+      <nav class="nav container">
+         <div class="nav__data">
+            <a href="index.html" class="nav__logo">
+               <i class="ri-planet-line"></i> CamLive
+            </a>
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line nav__burger"></i>
+               <i class="ri-close-line nav__close"></i>
             </div>
-         </nav>
-      </header>
-      
-      <div class="userdata">
-        <form action="#" >
-        
-            <div class="hint">
-                <h2>New Camera</h2>
-                Here you can try your RTSP/RTSPS/RTMP/RTMPS/HTTP video stream before adding it to your account. Example of usage:
-                <br>rtsp://user:pass@mydomain.com:554/h264
-                <br>rtmp://user:pass@mydomain.com:1935/ch0
-                <br>http://user:pass@mydomain.com/mjpeg
-            </div>
+         </div>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="home.html" class="nav__link">Home</a></li>
+               <li><a href="Cameras.html" class="nav__link">Cameras</a></li>
+               <li class="dropdown__item">
+                  <div class="nav__link">
+                     Account <i class="ri-lock-line"></i>
+                  </div>
+                  <ul class="dropdown__menu">
+                     <li>
+                        <a href="status.html" class="dropdown__link">
+                           <i class="ri-pie-chart-line"></i> Status
+                        </a>
+                     </li>
+                     <li>
+                        <a href="biling.html" class="dropdown__link">
+                           <i class="ri-arrow-up-down-line"></i> Biling information
+                        </a>
+                     </li>
+                     <li class="dropdown__subitem">
+                        <div class="dropdown__link">
+                           <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
+                        </div>
+                        <ul class="dropdown__submenu">
+                           <li>
+                              <a href="notification.html" class="dropdown__sublink">
+                                 <i class="ri-file-list-line"></i> Notifications
+                              </a>
+                           </li>
+                           <li>
+                              <a href="payment.html" class="dropdown__sublink">
+                                 <i class="ri-cash-line"></i> Payments
+                              </a>
+                           </li>
+                           <li>
+                              <a href="delete_account.html" class="dropdown__sublink">
+                                 Delete account<i class="fa-solid fa-trash"></i>
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li class="dropdown__item">
+                  <a href="profile.html" class="nav__link">
+                     Profile <i class="ri-user-line"></i>
+                  </a>
+               </li>
 
-         
-           <div class="camdata"><label for="">Html Code</label><input type="text" id="HtmlCode"></div>
-           <div class="camdata"> <button type="button" id="addHtmlButton">Add By HTML</button></div>
-           <br><label for="">Or</label>
-           <div class="camdata"><label for="">Url</label><input type="text" id="url"></div>
-           
-           <div class="camdata"><button type="button" id="addVideoButton">Add By Url</button></div>
-        </form>
-        <div class="camsllider">
+               <li><a href="contact.html" class="nav__link">Contact</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+
+   <div class="userdata">
+      <form action="#">
+
+         <div class="hint">
+            <h2>New Camera</h2>
+            Follow These Steps To Add New Camera:
+            <br>
+            <p> - Click The Following Link → <a href="https://rtsp.me/#create"
+                  target="_blank">https://rtsp.me/#create</a></pre>
+               <br>
+            <p> - Enter Your RTSP Command</pre>
+               <br>
+            <p> - Copy The Generated HTML Code</pre>
+            <p> - Enter The Copied HTML Code Down There </pre>
+               <br>
+         </div>
+
+
+         <div class="camdata"><label for="">Html Code</label><input type="text" id="HtmlCode"></div>
+         <div class="camdata"> <button type="button" id="addHtmlButton">Add By HTML</button></div>
+         <br><label for="">Or</label>
+         <div class="camdata"><label for="">Url</label><input type="text" id="url"></div>
+
+         <div class="camdata"><button type="button" id="addVideoButton">Add By Url</button></div>
+      </form>
+      <div class="camsllider">
          <select name="camera" id="camselector">
-            
+
          </select>
-        </div>
-       </div>
-       <div class="iframe-container" id="iframeContainer"></div>
-       
-    </div>
-   
-<script src="main.js"></script>
+      </div>
+   </div>
+   <div class="iframe-container" id="iframeContainer"></div>
+
+   </div>
+
+   <script src="main.js"></script>
 </body>
+
 </html>
