@@ -21,6 +21,43 @@
             margin-top: -18px;
             margin-left: 120px;
          }
+         .searcharea {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        input {
+            flex: 1;
+            width: 40%;
+            height: 30px;
+            border-radius: 12px;
+            border: 2px solid #3d1856;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 120px;
+            height: 30px;
+            background-color: #040216;
+            border-radius: 10px;
+            border: 1px solid #9e9595;
+            color: #ffffff;
+            margin-left: 40px;
+        }
+
+        button:hover {
+            transition: 0.6s;
+            transform: scale(1.2);
+            background-color: #120d40;
+            color: #9e9595;
+            cursor: pointer;
+        }
          #deleteAll{
     margin: 20px 0;
 }
@@ -126,7 +163,12 @@ td{
       <p>Billing period :</p>
       <span>2024-05-15 - 2024-05-31</span>
      </div>
-<div class="main">
+     <div class="searcharea">
+        <input id="searchkey" type="text" placeholder="Search...">
+
+     <button onclick="searchData()" >Search</button>
+   </div>
+     <div class="main">
      <table>
       <tr>
           <th>id</th>
@@ -148,13 +190,25 @@ td{
       time: "12:50"
    }
    let user1 = {
-      title: "camn1",
+      title: "camn23",
+      count: 4,
+      time: "12:50"
+   }
+   let user2 = {
+      title: "camn33",
+      count: 4,
+      time: "12:50"
+   }
+   let user3 = {
+      title: "camn43",
       count: 4,
       time: "12:50"
    }
    let data = [];
    data.push(user);
    data.push(user1);
+   data.push(user2);
+   data.push(user3);
    
    // Function to display data in the table
    function showData() {
@@ -193,6 +247,36 @@ td{
          behavior: "smooth",
       });
    };
+
+
+   
+
+function searchData(){
+   let searchkey=document.getElementById('searchkey').value;
+   console.log(searchkey);
+let table='';
+    {
+      for(let i=0;i<data.length;i++)
+      {
+         if(data[i].title.includes(searchkey))
+         {
+            table +=`
+           <tr>
+               <td>${i + 1}</td>
+               <td>${data[i].title}</td>
+               <td>${data[i].count}</td>
+               <td>${data[i].time}</td>
+            </tr>
+            `
+         }
+      }
+
+
+    }
+
+    document.getElementById('tbody').innerHTML=table;
+
+}
    </script>
       <script src="main.js"></script>
    </body>

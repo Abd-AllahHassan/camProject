@@ -31,7 +31,12 @@ function youtubevalidation(url) {
 
     if (embedUrl) {
         const iframeContainer = document.getElementById('iframeContainer');
-        iframeContainer.innerHTML = `<iframe src="${embedUrl}" allowfullscreen></iframe>`;
+        iframeContainer.innerHTML = `
+        <iframe src="${embedUrl}" allowfullscreen></iframe>
+        <div class="countarea">
+      <div class="count"></div>
+      <button>count</button>
+   </div>`;
     } else {
         alert('Please enter a valid URL.');
     }
@@ -115,3 +120,4 @@ const dataarray = [
     [op1, op2, op3, op4],
     [op4, op3, op2, op1]
 ];
+

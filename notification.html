@@ -64,6 +64,33 @@
          color: #040216;
          border-color: #040216;
       }
+.main table
+{
+    width: 100%;
+    text-align: center;
+    margin: 100px 0;
+}
+table th{
+    text-transform: uppercase;
+}
+th,td{
+    padding: 5px;
+}
+td{
+    border-top: 1px solid #3f3c3c;
+}
+#btnscroll
+{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #010128e0;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50px;
+}
    </style>
 </head>
 <body>
@@ -157,9 +184,21 @@
    
    <div class="notification" id="notification">Account successfully submit.</div>
 
-   <div class="outbut">
-
-   </div>
+   <div class="main">
+      <table>
+       <tr>
+           <th>id</th>
+           <th>title</th>
+           <th>count</th>
+           <th>time</th>
+           
+       </tr>
+       <tbody id="tbody">
+       
+       </tbody>
+   </table>
+   <button id="btnscroll">^</button>
+ </div>
 
    <script>
       function updateAccount() {
@@ -175,6 +214,76 @@
             }, 400);
          }, 13000);
       }
+
+      // <script>
+   let user = {
+      title: "camn1",
+      count: 4,
+      time: "12:50"
+   }
+   let user1 = {
+      title: "camn23",
+      count: 4,
+      time: "12:50"
+   }
+   let user2 = {
+      title: "camn33",
+      count: 4,
+      time: "12:50"
+   }
+   let user3 = {
+      title: "camn43",
+      count: 4,
+      time: "12:50"
+   }
+   let data = [];
+   data.push(user);
+   data.push(user1);
+   data.push(user2);
+   data.push(user3);
+   
+   // Function to display data in the table
+   function showData() {
+      let table = '';
+   
+      for (let i = 0; i < data.length; i++) {
+         table += `
+            <tr>
+               <td>${i + 1}</td>
+               <td>${data[i].title}</td>
+               <td>${data[i].count}</td>
+               <td>${data[i].time}</td>
+            </tr>
+         `;
+      }
+   
+      document.getElementById('tbody').innerHTML = table;
+   }
+   
+   // Display data when the page loads
+   showData();
+   
+   // Scroll button functionality
+   window.onscroll = function() {
+      let scrollbtn = document.getElementById('btnscroll');
+      if (window.scrollY >= 400) {
+         scrollbtn.style.display = 'block';
+      } else {
+         scrollbtn.style.display = 'none';
+      }
+   };
+   
+   document.getElementById('btnscroll').onclick = function() {
+      window.scroll({
+         top: 0,
+         behavior: "smooth",
+      });
+   };
+
+
+   
+
+   
    </script>
 </body>
 </html>

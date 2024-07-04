@@ -8,7 +8,7 @@
       <style>
         .userdata {
             padding-bottom: 20px;
-            width: 600px;
+            width: 100%;
             height: 100vh;
             margin-top: 150px;
             margin-left: 90px;
@@ -21,9 +21,14 @@
             color: #14062e;
             margin-bottom: 20px;
             line-height: 1.9;
+            width: 70%;
         }
+        .hint p a:hover {
+         opacity: 0.7;
+         text-decoration: underline;
+      }
         .camdata {
-            width: 100%;
+            width: 50%;
             display: flex;
             align-items: center;
             padding-top: 20px;
@@ -35,7 +40,7 @@
         }
         .camdata input {
             flex: 1;
-            width: 90%;
+            width: 80%;
             height: 30px;
             border-radius: 12px;
             border: 2px solid #3d1856;
@@ -64,7 +69,7 @@
         }
         .iframe-container iframe {
          width: 100%;
-         height: 500px;
+         height: 90vh;
          border: none;
       }
         #camselector{
@@ -74,6 +79,37 @@
          border-color: #040216;
          margin-top: -90px;
         }
+        .countarea {
+         width: 20%;
+         height: 20vh;
+         background-color: #a18a8a;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin: auto; 
+         border-radius: 10px;
+         margin-bottom: 20px;
+         margin-top: 15px;
+      }
+      .count {
+         margin-bottom: auto;
+         width: 60%;
+         height: 6vh;
+         text-align: center;
+         color: #040216;
+         background-color: #ede3e3;
+         font-size: 29px;
+         padding: 10px;
+         border-radius: 8px;
+         margin-top: 10px; 
+      }
+      .countarea > button {
+         margin-top: auto;
+         margin-bottom: 10px;
+         width: 70%;
+         margin-left: 0; /* Center the button */
+      }
        
     </style>
       <title>CamLive</title>
@@ -148,13 +184,19 @@
       <div class="userdata">
         <form action="#" >
         
-            <div class="hint">
-                <h2>New Camera</h2>
-                Here you can try your RTSP/RTSPS/RTMP/RTMPS/HTTP video stream before adding it to your account. Example of usage:
-                <br>rtsp://user:pass@mydomain.com:554/h264
-                <br>rtmp://user:pass@mydomain.com:1935/ch0
-                <br>http://user:pass@mydomain.com/mjpeg
-            </div>
+         <div class="hint">
+            <h2>New Camera</h2>
+            Follow These Steps To Add New Camera:
+            <br>
+            <p> - Click The Following Link → <a href="https://rtsp.me/#create"
+                  target="_blank">https://rtsp.me/#create</a></pre>
+               <br>
+            <p> - Enter Your RTSP Command</pre>
+               <br>
+            <p> - Copy The Generated HTML Code</pre>
+            <p> - Enter The Copied HTML Code Down There </pre>
+               <br>
+         </div>
 
          
            <div class="camdata"><label for="">Html Code</label><input type="text" id="HtmlCode"></div>
@@ -173,6 +215,7 @@
        <div class="iframe-container" id="iframeContainer"></div>
        
     </div>
+
    
 <script src="main.js"></script>
 </body>
